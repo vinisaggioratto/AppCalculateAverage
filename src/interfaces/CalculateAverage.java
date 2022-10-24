@@ -4,12 +4,10 @@
  */
 package interfaces;
 
-public interface PrintUserData {
-
-    public void printUsers();
-
-    public void printVehiclesData();
+/**
+ *
+ * @author vinicius-dev
+ */
+public interface CalculateAverage {
     
-    public void printFuelSupplyData();
-
 }

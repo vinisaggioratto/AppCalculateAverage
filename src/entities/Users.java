@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Users {
 
-    List<Users>listUsers = new ArrayList<>();
+    List<Users>listUsers = new ArrayList<Users>();
     String name;
     String cpf;
     String password;
@@ -53,7 +53,10 @@ public class Users {
     
     @Override
     public String toString() {
-        return "Users Data \n"
-                + this.getName();
+        return 
+                this.getName() + " - "
+                + this.getCpf()+ " - "
+                + this.getPassword()
+                ;
     }
 }

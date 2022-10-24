@@ -10,18 +10,17 @@ import java.util.List;
 public class Vehicles extends Users {
 
     //Lists:
-    List<Cars> listCars = new ArrayList<Cars>();
-    List<Truck> listTrucks = new ArrayList<Truck>();
-    List<Motorcycle> listMotorcycle = new ArrayList<Motorcycle>();
-
+    List<Vehicles> listVehicles = new ArrayList<Vehicles>();
+    
     //Variables
     String licencePlate; //placa de carro
+    String brand; //marca
     String model; //modelo
     int tankCapacity; //capacidade do tanque
     String color;
-    float standardAverage; //média padrão
+    float standardAverage = 0.00f; //média padrão
     String fuel; //combustivel
-    float km;
+    float startingKm = 0.00f; //km de cadastro
     String type; //tipo sedan, hatch
 
     //Constructors
@@ -29,43 +28,59 @@ public class Vehicles extends Users {
 
     }
 
-    public Vehicles(String licencePlate, String model, String name) {
+    public Vehicles(String licencePlate, String brand, String model, String name) {
         super(name);
         this.licencePlate = licencePlate;
+        this.brand = brand;
         this.model = model;
         this.name = name;
     }
 
-    public Vehicles(String licencePlate, String model, String fuel, String type, String name) {
+    public Vehicles(String licencePlate, String brand, String model, String fuel, String type, String name) {
         super(name);
         this.licencePlate = licencePlate;
+        this.brand = brand;
         this.model = model;
         this.fuel = fuel;
         this.type = type;
         this.name = name;
     }
 
-    public Vehicles(String licencePlate, String model, int tankCapacity, String color,
-            float standardAverage, String fuel, float km, String type, String name) {
+    public Vehicles(String licencePlate, String brand, String model, int tankCapacity, String color,
+            float standardAverage, String fuel, float startingKm, String type, String name) {
         super(name);
         this.licencePlate = licencePlate;
+        this.brand = brand;
         this.model = model;
         this.tankCapacity = tankCapacity;
         this.color = color;
         this.standardAverage = standardAverage;
         this.fuel = fuel;
-        this.km = km;
+        this.startingKm = startingKm;
         this.type = type;
         this.name = name;
     }
 
     //Getters and Setters
-    public List<Cars> getListCars() {
-        return listCars;
+    
+        public List<Vehicles> getListVehicles() {
+        return listVehicles;
     }
+    
+//    public List<Cars> getListCars() {
+//        return listCars;
+//    }
 
     public String getLicencePlate() {
         return licencePlate;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public void setLicencePlate(String licencePlate) {
@@ -104,12 +119,12 @@ public class Vehicles extends Users {
         this.fuel = fuel;
     }
 
-    public float getKm() {
-        return km;
+    public float getStartingKm() {
+        return startingKm;
     }
 
-    public void setKm(float km) {
-        this.km = km;
+    public void setStartingKm(float startingKm) {
+        this.startingKm = startingKm;
     }
 
     public String getType() {
@@ -130,11 +145,11 @@ public class Vehicles extends Users {
 
     @Override
     public String toString() {
-        return "Vehicles data: \n"
-                + getLicencePlate() + " - "
-                + getName() + " - "
-                + getModel() + " - "
-                + getType();
+        return 
+                "Licence Plate: " + getLicencePlate() + " - "
+                + "Owner: " + getName() + " - "
+                + "Model: " + getModel() + " - "
+                + "Type: " + getType();
     }
 
 }

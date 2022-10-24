@@ -12,24 +12,26 @@ public class Cars extends Vehicles {
     public Cars() {
     }
 
-    public Cars(String licencePlate, String model, String name){
-        super(licencePlate, model, name);
+    public Cars(String licencePlate, String brand, String model, String name) {
+        super(licencePlate, brand, model, name);
         this.licencePlate = licencePlate;
+        this.brand = brand;
         this.model = model;
-        this.name = name;        
+        this.name = name;
     }
-    
-    public Cars(String licencePlate, String model, String motor, int qtdPortas,
+
+    public Cars(String licencePlate, String brand, String model, String motor, int qtdPortas,
             String fuel, String type, String name) {
-        super(licencePlate, model, fuel, type, name);
-        
+        super(licencePlate, brand, model, fuel, type, name);
+
         this.licencePlate = licencePlate;
+        this.brand = brand;
         this.model = model;
         this.motor = motor;
         this.qtdPortas = qtdPortas;
         this.fuel = fuel;
         this.type = type;
-        this.name = name;           
+        this.name = name;
     }
 
     public String getMotor() {
@@ -47,7 +49,5 @@ public class Cars extends Vehicles {
     public void setQtdPortas(int qtdPortas) {
         this.qtdPortas = qtdPortas;
     }
-    
-    
 
 }
