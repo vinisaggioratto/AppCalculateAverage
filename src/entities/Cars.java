@@ -83,8 +83,7 @@ public class Cars extends Vehicles implements RegisterVehicles {
         vehicles.getListVehicles().add(car);
 
     }
-    
-    
+
     public void searchVehicle() {
         System.out.println("Enter the Licence Plate: ");
         String licenceP = scan.nextLine();
@@ -102,9 +101,14 @@ public class Cars extends Vehicles implements RegisterVehicles {
             System.out.println("No registered vehicle.");
         }
     }
-    
-    
-    
+
+    public void printVehiclesMin() {
+
+            System.out.println("Registered vehicles: ");
+            for (int i = 0; i < vehicles.getListVehicles().size(); i++) {
+                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate());
+            }
+    }
 
     public void printVehicles() {
         if (!vehicles.getListVehicles().isEmpty()) {
@@ -113,7 +117,7 @@ public class Cars extends Vehicles implements RegisterVehicles {
             for (Vehicles lv : vehicles.getListVehicles()) {
                 System.out.println(lv);
             }
-        }else{
+        } else {
             System.out.println("No registered vehicle.");
         }
         System.out.println("------------------------------------------------------------------------------------------");

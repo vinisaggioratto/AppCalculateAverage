@@ -43,6 +43,7 @@ public class AppCalculateAverage {
                         cars.registerVehicle();
                     }
                     if (optionMenu == 2) {
+                        cars.printVehiclesMin();
                         fs.registerSupply();
                     }
                     if (optionMenu == 3) {

@@ -17,6 +17,9 @@ public class FuelSupply {
     Scanner scan = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
+    
+ Cars car = new Cars();
+    
     FuelSupply addFs;
     Average av = new Average();
     List<FuelSupply> listFuelSupply = new ArrayList<FuelSupply>();
@@ -100,7 +103,7 @@ public class FuelSupply {
     }
 
     public void registerSupply() throws ParseException {
-
+        System.out.println("----------------------------");
         System.out.println("Enter the Licence Plate: ");
         licencePlate = scan.nextLine();
         System.out.println("Enter the Date: ");
