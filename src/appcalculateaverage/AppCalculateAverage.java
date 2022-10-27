@@ -52,7 +52,7 @@ public class AppCalculateAverage {
                     break;
 
                 case 2:
-                    System.out.println("[1]Report Supply Data | [2]Report User Data | [3]Report Vehicle List ");
+                    System.out.println("[1]Report Supply Data | [2]Report User Data | [3]Report Vehicle List | [4]Mileage List"); //mileage = kilometragem
                     optionMenu = scan.nextInt();
                     if (optionMenu == 1) {
                         System.out.println("------------------------------------------------------------------------------------------");
@@ -84,7 +84,15 @@ public class AppCalculateAverage {
                         //print vehicles into list vehicles
                         System.out.println("Vehicle List: ");
                         cars.printVehicles();
-
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                    }
+                    if (optionMenu == 4) {
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        //Print supply data
+                        System.out.println("Mileage List: ");
+                        fs.printKm();
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                     }
