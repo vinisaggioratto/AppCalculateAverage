@@ -21,7 +21,6 @@ public class FuelSupply {
     Average av = new Average();
     List<FuelSupply> listFuelSupply = new ArrayList<FuelSupply>();
     Stack<Double> stackKm = new Stack<Double>();
-    
 
     String licencePlate;
     double liters; //litros
@@ -30,7 +29,7 @@ public class FuelSupply {
     double average;
 
     double kmAntigo = 0.0;
-            
+
     public FuelSupply() {
     }
 
@@ -101,7 +100,7 @@ public class FuelSupply {
     }
 
     public void registerSupply() throws ParseException {
-        
+
         System.out.println("Informe a placa do veículo: ");
         licencePlate = scan.nextLine();
         System.out.println("Informe a data: ");
@@ -110,44 +109,43 @@ public class FuelSupply {
         km = scan.nextDouble();
         System.out.println("Informe a litragem: ");
         liters = scan.nextDouble();
-        
-        if(stackKm.isEmpty()){
+
+        if (stackKm.isEmpty()) {
             kmAntigo = 1;
-        }
-        else{
+        } else {
             kmAntigo = getStackKm().peek();
         }
         average = av.calculateAverage(kmAntigo, km, liters);
         addFs = new FuelSupply(licencePlate, km, liters, data, average);
         getListFuelSupply().add(addFs);
         getStackKm().add(km);
-        
+
         scan.nextLine();
     }
 
     public void printSupply() {
-        
-        if(!getListFuelSupply().isEmpty()){
-        for (FuelSupply ff : getListFuelSupply()) {
-            System.out.println(ff);
-        }
-    }else{
+
+        if (!getListFuelSupply().isEmpty()) {
+            for (FuelSupply ff : getListFuelSupply()) {
+                System.out.println(ff);
+            }
+        } else {
             System.out.println("Nenhum abastecimento cadastrado.");
         }
     }
 
-    public void printKm(){
-               if(!getStackKm().isEmpty()){
-        while(!getStackKm().isEmpty()){
-            double kmPrint = getStackKm().pop();
-            System.out.println("km: " + kmPrint);
-        }
-    }else{
+    public void printKm() {
+        if (!getStackKm().isEmpty()) {
+            while (!getStackKm().isEmpty()) {
+                double kmPrint = getStackKm().pop();
+                System.out.println("km: " + kmPrint);
+            }
+        } else {
             System.out.println("Nenhum km cadastrado.");
         }
+
     }
-    
-    
+
     @Override
     public String toString() {
         return "Fuel Supply Data: "

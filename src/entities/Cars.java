@@ -80,6 +80,28 @@ public class Cars extends Vehicles implements RegisterVehicles {
         vehicles.getListVehicles().add(car);
 
     }
+    
+    
+    public void searchVehicle() {
+        System.out.println("Informe a placa do veículo: ");
+        String licenceP = scan.nextLine();
+        boolean retorno = false;
+
+        for (int i = 0; i < vehicles.getListVehicles().size(); i++) {
+            if (vehicles.getListVehicles().get(i).getLicencePlate().equalsIgnoreCase(licenceP)) {
+                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate());
+                retorno = true;
+                System.out.println("Veículo encontrado.");
+                break;
+            }
+        }
+        if (!retorno == true) {
+            System.out.println("Veículo não encontrado.");
+        }
+    }
+    
+    
+    
 
     public void printVehicles() {
         if (!vehicles.getListVehicles().isEmpty()) {

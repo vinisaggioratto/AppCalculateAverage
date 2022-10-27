@@ -30,10 +30,9 @@ public class AppCalculateAverage {
         FuelSupply fs = new FuelSupply(); //object that inserts the new object into the list
 
         //MENU
+        System.out.println("APPLICATION OF AVERAGE CONTROL");
         do {
-
-            System.out.println("APPLICATION OF AVERAGE CONTROL");
-            System.out.println("[1]Register | [2]Reports | [3]Search Vehicle"); //cadastros , relatórios
+            System.out.println("[1]Register | [2]Reports | [3]Search"); //cadastros , relatórios
             optionMenu = scan.nextInt();
 
             switch (optionMenu) {
@@ -49,6 +48,7 @@ public class AppCalculateAverage {
                     if (optionMenu == 3) {
                         user.registerUser();
                     }
+                    scan.nextLine();
                     break;
 
                 case 2:
@@ -96,16 +96,24 @@ public class AppCalculateAverage {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                     }
-
+                    scan.nextLine();
                     break;
 
                 case 3:
                     scan.nextLine();
-                    user.searchUser();
+                    System.out.println("[1]Search User | [2]Search Vehicle");
+                    optionMenu = scan.nextInt();
+                    if (optionMenu == 1) {
+                        user.searchUser();
+                    }
+                    if (optionMenu == 2) {
+                        cars.searchVehicle();
+                    }
+                    scan.nextLine();
                     break;
             }
 
-            scan.nextLine();
+            //scan.nextLine();
             //CONTINUE OR EXIT
             System.out.println("Back to Home Menu? Y/N");
             optionContinue = scan.nextLine();

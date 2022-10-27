@@ -70,8 +70,6 @@ public class Users {
         String nameU = scan.nextLine();
         boolean retorno = false;
 
-        System.out.println("FOR + IF: ");
-
         for (int i = 0; i < this.listUsers.size(); i++) {
             if (this.listUsers.get(i).getName().equalsIgnoreCase(nameU)) {
                 System.out.println(this.listUsers.get(i).getName());
@@ -83,7 +81,6 @@ public class Users {
         if (!retorno == true) {
             System.out.println("Usuário não encontrado.");
         }
-        scan.nextLine();
     }
 
     //prints
