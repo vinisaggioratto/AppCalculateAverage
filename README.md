@@ -2,6 +2,7 @@
 Aplicação em Java para cadastro de veículos e cálculo da média de combustível informada. Mostrará também, o custo por KM/Rodado e custo total com combustível.
 
 Será aplicado nesta projeto: encapsulamento, herança, , construtores, polimorfismo, interface, classes, métodos, listas, pilha e escolha de nomes (classes, variáveis métodos e objetos).
+Procurei fazer tudo em inglês para praticar escrita e leitura. A tradução foi realizada com o Google Tradutor em sua maioria pois meu conhecimento ainda é básico no idioma. É necessário alguns ajustes, pois algumas frases ficaram com um entendimento diferente.
 
 Será atualizado com frequência, buscando praticar os novos conceitos aprendidos durante o curso do Senac e fora dele.
 Vou refatorar o código, sempre que possível, procurando otimizar ao máximo seu desempenho e legibilidade.
