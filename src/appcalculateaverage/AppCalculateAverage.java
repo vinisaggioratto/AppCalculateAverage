@@ -6,13 +6,9 @@ package appcalculateaverage;
 
 import entities.Cars;
 import entities.FuelSupply;
-import entities.Motorcycle;
-import entities.Truck;
 import entities.Users;
 import entities.Vehicles;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -21,7 +17,6 @@ public class AppCalculateAverage {
     public static void main(String[] args) throws ParseException {
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 //Variables
         String optionContinue = "Y"; //C = YES   N = NO
         int optionMenu = 0;
@@ -31,8 +26,7 @@ public class AppCalculateAverage {
 
         Vehicles vehicle = new Vehicles();
         Cars cars = new Cars();
-        Motorcycle mc = new Motorcycle();
-        Truck truck = new Truck();
+
 
         FuelSupply fs = new FuelSupply(); //object that inserts the new object into the list
 
@@ -40,7 +34,7 @@ public class AppCalculateAverage {
         do {
 
             System.out.println("APPLICATION OF AVERAGE CONTROL");
-            System.out.println("[1]Register | [2]Reports | [3]Search"); //cadastros , relatórios
+            System.out.println("[1]Register | [2]Reports | [3]Search Vehicle"); //cadastros , relatórios
             optionMenu = scan.nextInt();
 
             switch (optionMenu) {
