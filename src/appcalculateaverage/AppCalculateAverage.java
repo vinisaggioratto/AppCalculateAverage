@@ -27,7 +27,6 @@ public class AppCalculateAverage {
         Vehicles vehicle = new Vehicles();
         Cars cars = new Cars();
 
-
         FuelSupply fs = new FuelSupply(); //object that inserts the new object into the list
 
         //MENU
@@ -43,50 +42,55 @@ public class AppCalculateAverage {
                     optionMenu = scan.nextInt();
                     if (optionMenu == 1) {
                         cars.registerVehicle();
-
                     }
                     if (optionMenu == 2) {
-                        
                         fs.registerSupply();
-
                     }
                     if (optionMenu == 3) {
                         user.registerUser();
-
-                        user.getListUsers().size();
                     }
                     break;
 
                 case 2:
-                    System.out.println("------------------------------------------------------------------------------------------");
-                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("[1]Report Supply Data | [2]Report User Data | [3]Report Vehicle List ");
+                    optionMenu = scan.nextInt();
+                    if (optionMenu == 1) {
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        //Print supply data
+                        System.out.println("Supply Data");
+                        fs.printSupply();
+                        fs.printKm();
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                    }
+                    if (optionMenu == 2) {
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        //print user data
+                        System.out.println("User Data");
+                        user.printUser();
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
 
-                    //Print supply data
-                    System.out.println("Supply Data");
-                    fs.printSupply();
-                    fs.printKm();
-                    System.out.println("------------------------------------------------------------------------------------------");
-                    System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("User List Size: ");
+                        System.out.println(user.getListUsers().size());
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                    }
+                    if (optionMenu == 3) {
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        //print vehicles into list vehicles
+                        System.out.println("Vehicle List: ");
+                        cars.printVehicles();
 
-                    //print user data
-                    System.out.println("User Data");
-                    user.printUser();
-                    System.out.println("------------------------------------------------------------------------------------------");
-                    System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                        System.out.println("------------------------------------------------------------------------------------------");
+                    }
 
-                    System.out.println("User List Size: ");
-                    System.out.println(user.getListUsers().size());
-                    System.out.println("------------------------------------------------------------------------------------------");
-                    System.out.println("------------------------------------------------------------------------------------------");
-
-                    //print vehicles into list vehicles
-                    System.out.println("Vehicle List: ");
-                    cars.printVehicles();
-                    
-                    System.out.println("------------------------------------------------------------------------------------------");
-                    System.out.println("------------------------------------------------------------------------------------------");
                     break;
-                    
+
                 case 3:
                     scan.nextLine();
                     user.searchUser();
