@@ -20,6 +20,8 @@ public class Users {
     String cpf;
     String password;
 
+    
+    //CONSTRUCTOR
     public Users() {
 
     }
@@ -34,6 +36,8 @@ public class Users {
         this.password = password;
     }
 
+    
+    //GET / SETTER
     public void setName(String name) {
         this.name = name;
     }
@@ -54,50 +58,50 @@ public class Users {
         return listUsers;
     }
 
+    //METHODS
     public void registerUser() {
-        System.out.println("Informe o nome do Usuário: ");
-        String nameU = scan.nextLine();
-        System.out.println("Informe o cpf: ");
-        String cpfU = scan.nextLine();
-        System.out.println("Informe a senha: ");
-        String passwordU = scan.nextLine();
-        user = new Users(nameU, cpfU, passwordU);
+        System.out.println("Enter the user name: ");
+        name = scan.nextLine();
+        System.out.println("Enter the cpf: ");
+        cpf = scan.nextLine();
+        System.out.println("Enter the password: ");
+        password = scan.nextLine();
+        user = new Users(name, cpf, password);
         getListUsers().add(user);
     }
 
     public void searchUser() {
-        System.out.println("Informe o nome do Usuário: ");
+        System.out.println("Enter the user name: ");
         String nameU = scan.nextLine();
-        boolean retorno = false;
+        boolean returnS = false;
 
         for (int i = 0; i < this.listUsers.size(); i++) {
             if (this.listUsers.get(i).getName().equalsIgnoreCase(nameU)) {
-                System.out.println(this.listUsers.get(i).getName());
-                retorno = true;
-                System.out.println("Usuário encontrado.");
+                
+                returnS = true;
+                System.out.println("User found.");
+                System.out.println(this.listUsers.get(i).getName() +" | CPF: " + this.listUsers.get(i).getCpf());
                 break;
             }
         }
-        if (!retorno == true) {
-            System.out.println("Usuário não encontrado.");
+        if (!returnS == true) {
+            System.out.println("User not found.");
         }
     }
 
-    //prints
-    public void printUser(){
-        if(!getListUsers().isEmpty()){
-            
-        System.out.println("User data");
-                    for (Users u : getListUsers()) {
-                        System.out.println(u);
-                    }
-    }else{
-            System.out.println("Nenhum usuário cadastrado.");
+
+    public void printUser() {
+        if (!getListUsers().isEmpty()) {
+
+            System.out.println("User data");
+            for (Users u : getListUsers()) {
+                System.out.println(u);
+            }
+        } else {
+            System.out.println("No registered user.");
         }
     }
-    
-    
-    
+
     @Override
     public String toString() {
         return this.getName() + " - "

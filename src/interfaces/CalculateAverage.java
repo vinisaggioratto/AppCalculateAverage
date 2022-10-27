@@ -10,6 +10,6 @@ package interfaces;
  */
 public interface CalculateAverage {
     
-    public double calculateAverage(double km, double kmAtual, double liters);
+    public double calculateAverage(double km, double currentKm, double liters);
     
 }

@@ -34,10 +34,11 @@ public class Vehicles extends Users {
         this.model = model;
     }
 
-    public Vehicles(String licencePlate, String brand, String model, String fuel, String type) {
+    public Vehicles(String licencePlate, String brand, String model, String color, String fuel, String type) {
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
+        this.color = color;
         this.fuel = fuel;
         this.type = type;
 
@@ -140,8 +141,10 @@ public class Vehicles extends Users {
     @Override
     public String toString() {
         return "Licence Plate: " + getLicencePlate() + " - "
-                + "Model: " + getModel() + " - "
-                + "Type: " + getType();
+                + "Brand: " + getBrand() + " - "
+                + "Model: " + getModel() + " - "               
+                + "Type: " + getType() + " - "  
+                + "Color: " + getColor();
     }
 
 }

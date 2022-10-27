@@ -16,7 +16,7 @@ public class Cars extends Vehicles implements RegisterVehicles {
     Users users;
 
     String motor;
-    int qtdPortas;
+    int qtdDoors;
 
     public Cars() {
     }
@@ -29,15 +29,16 @@ public class Cars extends Vehicles implements RegisterVehicles {
 
     }
 
-    public Cars(String licencePlate, String brand, String model, String motor, int qtdPortas,
+    public Cars(String licencePlate, String brand, String model, String color, String motor, int qtdDoors,
             String fuel, String type) {
-        super(licencePlate, brand, model, fuel, type);
+        super(licencePlate, brand, model, color, fuel, type);
 
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
+        this.color = color;
         this.motor = motor;
-        this.qtdPortas = qtdPortas;
+        this.qtdDoors = qtdDoors;
         this.fuel = fuel;
         this.type = type;
 
@@ -51,52 +52,54 @@ public class Cars extends Vehicles implements RegisterVehicles {
         this.motor = motor;
     }
 
-    public int getQtdPortas() {
-        return qtdPortas;
+    public int getQtdDoors() {
+        return qtdDoors;
     }
 
-    public void setQtdPortas(int qtdPortas) {
-        this.qtdPortas = qtdPortas;
+    public void setQtdDoors(int qtdDoors) {
+        this.qtdDoors = qtdDoors;
     }
 
     @Override
     public void registerVehicle() {
-        System.out.println("Informe a placa: ");
-        String placa = scan.nextLine();
-        System.out.println("Informe a marca: ");
-        String marca = scan.nextLine();
-        System.out.println("Informe a modelo:");
-        String modelo = scan.nextLine();
+        System.out.println("Enter the Licence Plate: ");
+        licencePlate = scan.nextLine();
+        System.out.println("Enter the Brand: ");
+        brand = scan.nextLine();
+        System.out.println("Enter the model:");
+        model = scan.nextLine();
+        System.out.println("Enter the color: ");
+        color = scan.nextLine();
         System.out.println("Motor: (1.0 / 2.0)");
-        String motor = scan.nextLine();
-        System.out.println("Portas: ");
-        int portas = scan.nextInt();
+        motor = scan.nextLine();
+        System.out.println("Doors: ");
+        qtdDoors = scan.nextInt();
         scan.nextLine();
-        System.out.println("Combustível: ");
-        String comb = scan.nextLine();
-        System.out.println("Tipo: ");
-        String tipo = scan.nextLine();
-        car = new Cars(placa, marca, modelo, motor, portas, comb, tipo);
+        System.out.println("Fuel type: ");
+        fuel = scan.nextLine();
+        System.out.println("Type: (sedan/hatch)");
+        type = scan.nextLine();
+        car = new Cars(licencePlate, brand, model, color, motor, qtdDoors, fuel, type);
         vehicles.getListVehicles().add(car);
 
     }
     
     
     public void searchVehicle() {
-        System.out.println("Informe a placa do veículo: ");
+        System.out.println("Enter the Licence Plate: ");
         String licenceP = scan.nextLine();
         boolean retorno = false;
 
         for (int i = 0; i < vehicles.getListVehicles().size(); i++) {
             if (vehicles.getListVehicles().get(i).getLicencePlate().equalsIgnoreCase(licenceP)) {
-                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate());
                 retorno = true;
-                System.out.println("Veículo encontrado.");
+                System.out.println("Vehicle found.");
+                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate());
                 break;
             }
         }
         if (!retorno == true) {
-            System.out.println("Veículo não encontrado.");
+            System.out.println("No registered vehicle.");
         }
     }
     
@@ -111,7 +114,7 @@ public class Cars extends Vehicles implements RegisterVehicles {
                 System.out.println(lv);
             }
         }else{
-            System.out.println("Nenhum veículo cadastrado.");
+            System.out.println("No registered vehicle.");
         }
         System.out.println("------------------------------------------------------------------------------------------");
     }

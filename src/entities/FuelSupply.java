@@ -28,7 +28,7 @@ public class FuelSupply {
     double km;
     double average;
 
-    double kmAntigo = 0.0;
+    double oldKm = 0.0;
 
     public FuelSupply() {
     }
@@ -101,21 +101,21 @@ public class FuelSupply {
 
     public void registerSupply() throws ParseException {
 
-        System.out.println("Informe a placa do veículo: ");
+        System.out.println("Enter the Licence Plate: ");
         licencePlate = scan.nextLine();
-        System.out.println("Informe a data: ");
+        System.out.println("Enter the Date: ");
         Date data = sdf.parse(scan.nextLine());
-        System.out.println("Informe o km: ");
+        System.out.println("Enter the km: ");
         km = scan.nextDouble();
-        System.out.println("Informe a litragem: ");
+        System.out.println("Enter the liters: ");
         liters = scan.nextDouble();
 
         if (stackKm.isEmpty()) {
-            kmAntigo = 1;
+            oldKm = 1;
         } else {
-            kmAntigo = getStackKm().peek();
+            oldKm = getStackKm().peek();
         }
-        average = av.calculateAverage(kmAntigo, km, liters);
+        average = av.calculateAverage(oldKm, km, liters);
         addFs = new FuelSupply(licencePlate, km, liters, data, average);
         getListFuelSupply().add(addFs);
         getStackKm().add(km);
@@ -130,7 +130,7 @@ public class FuelSupply {
                 System.out.println(ff);
             }
         } else {
-            System.out.println("Nenhum abastecimento cadastrado.");
+            System.out.println("No supplies registered.");
         }
     }
 
@@ -141,7 +141,7 @@ public class FuelSupply {
                 System.out.println("km: " + kmPrint);
             }
         } else {
-            System.out.println("Nenhum km cadastrado.");
+            System.out.println("No km registered.");
         }
 
     }

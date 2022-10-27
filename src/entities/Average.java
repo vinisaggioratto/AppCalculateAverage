@@ -10,8 +10,8 @@ import interfaces.CalculateAverage;
 public class Average implements CalculateAverage{
 
     @Override
-    public double calculateAverage(double kmAntigo, double kmAtual, double liters) {
-       return (kmAtual - kmAntigo) / liters; 
+    public double calculateAverage(double oldKm, double currentKm, double liters) {
+       return (currentKm - oldKm) / liters; 
     }
     
 }
