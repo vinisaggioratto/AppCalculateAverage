@@ -27,7 +27,6 @@ Vou refatorar o código, sempre que possível, procurando otimizar ao máximo se
 
 > Formatar a exibição dos dados na impressão.
 
-> Fazer a validação das opções no input. 
 -------------------
 ### **DESCRIÇÃO DAS CLASSES:**
 
@@ -49,10 +48,11 @@ Vou refatorar o código, sempre que possível, procurando otimizar ao máximo se
         recebidos por parâmetro da classe FuelSupply e retorna a média.
 ##### > Cars
         Classe responsável pelo cadastro de veículos, métodos e construtores. Possui vinculo por herança com a classe Vehicles.
+##### > ValidOption
+        Classe que faz a validação da seleção do menu e submenu.
 ##### > CalculateAverage
         Interface com o método para cálculo da média.
 ##### > PrintUserData
         Interface com o padrão de impressão de dados.
 ##### > RegisterVehicles
-        Interface com o padrão para cadastro de veículos.
-        
+        Interface com o padrão para cadastro de veículos.       
