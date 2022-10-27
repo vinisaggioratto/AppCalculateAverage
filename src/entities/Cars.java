@@ -4,7 +4,16 @@
  */
 package entities;
 
-public class Cars extends Vehicles {
+import interfaces.RegisterVehicles;
+import java.util.Scanner;
+
+public class Cars extends Vehicles implements RegisterVehicles {
+
+    Scanner scan = new Scanner(System.in);
+
+    Cars car;
+    Vehicles vehicles = new Vehicles();
+    Users users;
 
     String motor;
     int qtdPortas;
@@ -12,17 +21,17 @@ public class Cars extends Vehicles {
     public Cars() {
     }
 
-    public Cars(String licencePlate, String brand, String model, String name) {
-        super(licencePlate, brand, model, name);
+    public Cars(String licencePlate, String brand, String model) {
+        super(licencePlate, brand, model);
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
-        this.name = name;
+
     }
 
     public Cars(String licencePlate, String brand, String model, String motor, int qtdPortas,
-            String fuel, String type, String name) {
-        super(licencePlate, brand, model, fuel, type, name);
+            String fuel, String type) {
+        super(licencePlate, brand, model, fuel, type);
 
         this.licencePlate = licencePlate;
         this.brand = brand;
@@ -31,7 +40,7 @@ public class Cars extends Vehicles {
         this.qtdPortas = qtdPortas;
         this.fuel = fuel;
         this.type = type;
-        this.name = name;
+
     }
 
     public String getMotor() {
@@ -48,6 +57,41 @@ public class Cars extends Vehicles {
 
     public void setQtdPortas(int qtdPortas) {
         this.qtdPortas = qtdPortas;
+    }
+
+    @Override
+    public void registerVehicle() {
+        System.out.println("Informe a placa: ");
+        String placa = scan.nextLine();
+        System.out.println("Informe a marca: ");
+        String marca = scan.nextLine();
+        System.out.println("Informe a modelo:");
+        String modelo = scan.nextLine();
+        System.out.println("Motor: (1.0 / 2.0)");
+        String motor = scan.nextLine();
+        System.out.println("Portas: ");
+        int portas = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Combustível: ");
+        String comb = scan.nextLine();
+        System.out.println("Tipo: ");
+        String tipo = scan.nextLine();
+        car = new Cars(placa, marca, modelo, motor, portas, comb, tipo);
+        vehicles.getListVehicles().add(car);
+
+    }
+
+    public void printVehicles() {
+        if (!vehicles.getListVehicles().isEmpty()) {
+
+            System.out.println("Vehicle data list: ");
+            for (Vehicles lv : vehicles.getListVehicles()) {
+                System.out.println(lv);
+            }
+        }else{
+            System.out.println("Nenhum veículo cadastrado.");
+        }
+        System.out.println("------------------------------------------------------------------------------------------");
     }
 
 }

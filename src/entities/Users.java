@@ -6,10 +6,16 @@ package entities;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Users {
 
-    List<Users>listUsers = new ArrayList<Users>();
+    Scanner scan = new Scanner(System.in);
+
+    Users user;
+    Users createListUser;
+
+    List<Users> listUsers = new ArrayList<Users>();
     String name;
     String cpf;
     String password;
@@ -18,10 +24,10 @@ public class Users {
 
     }
 
-    public Users(String name){
+    public Users(String name) {
         this.name = name;
     }
-    
+
     public Users(String name, String cpf, String password) {
         this.name = name;
         this.cpf = cpf;
@@ -48,15 +54,57 @@ public class Users {
         return listUsers;
     }
 
+    public void registerUser() {
+        System.out.println("Informe o nome do Usuário: ");
+        String nameU = scan.nextLine();
+        System.out.println("Informe o cpf: ");
+        String cpfU = scan.nextLine();
+        System.out.println("Informe a senha: ");
+        String passwordU = scan.nextLine();
+        user = new Users(nameU, cpfU, passwordU);
+        getListUsers().add(user);
+    }
+
+    public void searchUser() {
+        System.out.println("Informe o nome do Usuário: ");
+        String nameU = scan.nextLine();
+        boolean retorno = false;
+
+        System.out.println("FOR + IF: ");
+
+        for (int i = 0; i < this.listUsers.size(); i++) {
+            if (this.listUsers.get(i).getName().equalsIgnoreCase(nameU)) {
+                System.out.println(this.listUsers.get(i).getName());
+                retorno = true;
+                System.out.println("Usuário encontrado.");
+                break;
+            }
+        }
+        if (!retorno == true) {
+            System.out.println("Usuário não encontrado.");
+        }
+        scan.nextLine();
+    }
+
+    //prints
+    public void printUser(){
+        if(!getListUsers().isEmpty()){
+            
+        System.out.println("User data");
+                    for (Users u : getListUsers()) {
+                        System.out.println(u);
+                    }
+    }else{
+            System.out.println("Nenhum usuário cadastrado.");
+        }
+    }
     
     
     
     @Override
     public String toString() {
-        return 
-                this.getName() + " - "
-                + this.getCpf()+ " - "
-                + this.getPassword()
-                ;
+        return this.getName() + " - "
+                + this.getCpf() + " - "
+                + this.getPassword();
     }
 }

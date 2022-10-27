@@ -11,7 +11,7 @@ public class Vehicles extends Users {
 
     //Lists:
     List<Vehicles> listVehicles = new ArrayList<Vehicles>();
-    
+
     //Variables
     String licencePlate; //placa de carro
     String brand; //marca
@@ -28,27 +28,24 @@ public class Vehicles extends Users {
 
     }
 
-    public Vehicles(String licencePlate, String brand, String model, String name) {
-        super(name);
+    public Vehicles(String licencePlate, String brand, String model) {
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
-        this.name = name;
     }
 
-    public Vehicles(String licencePlate, String brand, String model, String fuel, String type, String name) {
-        super(name);
+    public Vehicles(String licencePlate, String brand, String model, String fuel, String type) {
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
         this.fuel = fuel;
         this.type = type;
-        this.name = name;
+
     }
 
     public Vehicles(String licencePlate, String brand, String model, int tankCapacity, String color,
-            float standardAverage, String fuel, float startingKm, String type, String name) {
-        super(name);
+            float standardAverage, String fuel, float startingKm, String type) {
+
         this.licencePlate = licencePlate;
         this.brand = brand;
         this.model = model;
@@ -58,18 +55,13 @@ public class Vehicles extends Users {
         this.fuel = fuel;
         this.startingKm = startingKm;
         this.type = type;
-        this.name = name;
+
     }
 
     //Getters and Setters
-    
-        public List<Vehicles> getListVehicles() {
+    public List<Vehicles> getListVehicles() {
         return listVehicles;
     }
-    
-//    public List<Cars> getListCars() {
-//        return listCars;
-//    }
 
     public String getLicencePlate() {
         return licencePlate;
@@ -143,11 +135,11 @@ public class Vehicles extends Users {
         this.model = model;
     }
 
+
+
     @Override
     public String toString() {
-        return 
-                "Licence Plate: " + getLicencePlate() + " - "
-                + "Owner: " + getName() + " - "
+        return "Licence Plate: " + getLicencePlate() + " - "
                 + "Model: " + getModel() + " - "
                 + "Type: " + getType();
     }

@@ -4,12 +4,8 @@
  */
 package interfaces;
 
-/**
- *
- * @author vinicius-dev
- */
-public interface CalculateAverage {
-    
-    public double calculateAverage(double km, double kmAtual, double liters);
-    
+
+public interface RegisterVehicles {
+  
+    public void registerVehicle();
 }

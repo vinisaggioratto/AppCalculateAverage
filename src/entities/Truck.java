@@ -10,8 +10,8 @@ public class Truck extends Vehicles{
     public Truck() {
     }
 
-    public Truck(String licencePlate, String brand, String model, int tankCapacity, String color, float standardAverage, String fuel, float startingKm, String type, String name) {
-        super(licencePlate, brand, model, tankCapacity, color, standardAverage, fuel, startingKm, type, name);
+    public Truck(String licencePlate, String brand, String model, int tankCapacity, String color, float standardAverage, String fuel, float startingKm, String type) {
+        super(licencePlate, brand, model, tankCapacity, color, standardAverage, fuel, startingKm, type);
     }
     
     

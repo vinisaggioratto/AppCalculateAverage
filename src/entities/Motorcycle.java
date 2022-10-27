@@ -11,12 +11,12 @@ public class Motorcycle extends Vehicles{
     public Motorcycle() {
     }
 
-    public Motorcycle(String licencePlate, String brand, String model, String name) {
-        super(licencePlate, brand, model, name);
+    public Motorcycle(String licencePlate, String brand, String model) {
+        super(licencePlate, brand, model);
     }
 
-    public Motorcycle(String licencePlate, String brand, String model, String fuel, String type, String potency, String name) {
-        super(licencePlate, brand, model, fuel, type, name);
+    public Motorcycle(String licencePlate, String brand, String model, String fuel, String type, String potency) {
+        super(licencePlate, brand, model, fuel, type);
         
         this.potency = potency;
     }

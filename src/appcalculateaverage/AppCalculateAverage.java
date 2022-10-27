@@ -22,100 +22,93 @@ public class AppCalculateAverage {
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        //Instantiated user object
+//Variables
+        String optionContinue = "Y"; //C = YES   N = NO
+        int optionMenu = 0;
+
+//Instantiated user object
         Users user = new Users();
-        Users createListUser = new Users();
 
         Vehicles vehicle = new Vehicles();
         Cars cars = new Cars();
-        Motorcycle bike = new Motorcycle();
+        Motorcycle mc = new Motorcycle();
         Truck truck = new Truck();
 
         FuelSupply fs = new FuelSupply(); //object that inserts the new object into the list
-        FuelSupply addFs = new FuelSupply(); //object that receives the data
-        Date data = sdf.parse("20/10/2022");
 
-        //Create user object
-        user = new Users("Test2", "000.000.000-02", "123654");
-        createListUser.getListUsers().add(user);
+        //MENU
+        do {
 
-        //Include datas in list
-        //user.getListUsers().add(user); //new Users(user.getName(), user.getCpf(), user.getPassword())
-        //Test include datas into list vehicles 0
-        cars = new Cars("CAR-0000", "Chevrolet", "Corsa", "1.0", 4, "GASOLINE", "SEDAN", user.getName());
-        // vehicle.getListCars().add(cars);
-        vehicle.getListVehicles().add(cars);
-        data = sdf.parse("21/10/2022");
-        addFs = new FuelSupply(cars, 30, data);
-        fs.getListFuelSupply().add(addFs);
+            System.out.println("APPLICATION OF AVERAGE CONTROL");
+            System.out.println("[1]Register | [2]Reports | [3]Search"); //cadastros , relatórios
+            optionMenu = scan.nextInt();
 
-        //Test include datas into list vehicles 1
-        cars = new Cars("CAR-0001", "Fiat", "Palio", "1.4", 4, "GASOLINE", "HATCH", user.getName());
-        //vehicle.getListCars().add(cars);
-        vehicle.getListVehicles().add(cars);
-        data = sdf.parse("21/10/2022");
-        addFs = new FuelSupply(cars, 40, data);
-        fs.getListFuelSupply().add(addFs);
+            switch (optionMenu) {
+                case 1:
+                    System.out.println("[1]Register Vehicles | [2]Register Supply | [3]Register User");
+                    optionMenu = scan.nextInt();
+                    if (optionMenu == 1) {
+                        cars.registerVehicle();
 
-        //Test include datas into list vehicles 2
-        user = new Users("Test0", "000.000.000-00", "123456");
-        createListUser.getListUsers().add(user);
-        data = sdf.parse("22/10/2022");
-        cars = new Cars("CAR-0002", "VOLSKWAGEN", "GOL G3", "1.6", 2, "GASOLINE", "HATCH", user.getName());
-        //vehicle.getListCars().add(cars);
-        vehicle.getListVehicles().add(cars);
+                    }
+                    if (optionMenu == 2) {
+                        
+                        fs.registerSupply();
 
-        addFs = new FuelSupply(cars, 50, data);
-        fs.getListFuelSupply().add(addFs);
+                    }
+                    if (optionMenu == 3) {
+                        user.registerUser();
 
-        //includes motorcycle test 0 - vehicles 3
-        user = new Users("Test1", "000.000.000-01", "654321");
-        createListUser.getListUsers().add(user);
-        data = sdf.parse("23/10/2022");
-        bike = new Motorcycle("MOT-0003", "YAMAHA", "CROSSER 150Z", "GASOLINE/ALCOOL", "ALL TERRAIN", "149CC", user.getName());
-        //vehicle.getListCars().add(cars);
-        vehicle.getListVehicles().add(bike);
+                        user.getListUsers().size();
+                    }
+                    break;
 
-        addFs = new FuelSupply(bike, 10, data);
-        fs.getListFuelSupply().add(addFs);
+                case 2:
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------");
 
-        //includes truck test 0 - vehicles 4
-        user = new Users("Test0", "000.000.000-00", "123456");
-        createListUser.getListUsers().add(user);
-        data = sdf.parse("23/10/2022");
-        truck = new Truck("TRC-0001", "SCANIA", "R620", 800, "BLUE", 2, "DIESEL", 1000, "TRUCK", user.getName());
-        vehicle.getListVehicles().add(truck);
+                    //Print supply data
+                    System.out.println("Supply Data");
+                    fs.printSupply();
+                    fs.printKm();
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------");
 
-        addFs = new FuelSupply(truck, 750, data);
-        fs.getListFuelSupply().add(addFs);
+                    //print user data
+                    System.out.println("User Data");
+                    user.printUser();
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------");
 
-//Prints
-//Print Tests
-        System.out.println("------------------------------------------------------------------------------------------");
-        System.out.println("Test data included Fuel Supply");
-        for (FuelSupply ff : fs.getListFuelSupply()) {
-            System.out.println(ff);
-        }
-        System.out.println("Fuel Supply Date: " + sdf.format(addFs.getSupplyDate()));
+                    System.out.println("User List Size: ");
+                    System.out.println(user.getListUsers().size());
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------");
 
-        System.out.println("------------------------------------------------------------------------------------------");
-        System.out.println("------------------------------------------------------------------------------------------");
-//End Tests
+                    //print vehicles into list vehicles
+                    System.out.println("Vehicle List: ");
+                    cars.printVehicles();
+                    
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------------------------------------------------");
+                    break;
+                    
+                case 3:
+                    scan.nextLine();
+                    user.searchUser();
+                    break;
+            }
 
-        //print user data
-        System.out.println("User data");
-        for (Users u : createListUser.getListUsers()) {
-            System.out.println(u);
-        }
-        System.out.println("------------------------------------------------------------------------------------------");
-        System.out.println("------------------------------------------------------------------------------------------");
+            scan.nextLine();
+            //CONTINUE OR EXIT
+            System.out.println("Back to Home Menu? Y/N");
+            optionContinue = scan.nextLine();
+            if (!optionContinue.equals("Y")) {
+                System.out.println("Application closed");
+            }
 
-        //print vehicles into list vehicles
-        System.out.println("Vehicle data list: ");
-        for (Vehicles lv : vehicle.getListVehicles()) {
-            System.out.println(lv);
-        }
-        System.out.println("------------------------------------------------------------------------------------------");
+        } while (optionContinue.equals("Y"));
+
     }
 
 }
