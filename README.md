@@ -1,4 +1,5 @@
 # **AppCalculateAverage**
+
 Aplicação em Java para cadastro de veículos e cálculo da média de combustível informada. Mostrará também, o custo por KM/Rodado e custo total com combustível.
 
 Será aplicado nesta projeto: encapsulamento, herança, , construtores, polimorfismo, interface, classes, métodos, listas, pilha e escolha de nomes (classes, variáveis métodos e objetos).
@@ -10,6 +11,7 @@ Vou refatorar o código, sempre que possível, procurando otimizar ao máximo se
 
 --------------------
 ##### JÁ FOI IMPLEMENTADO:
+
 - Classes
 - Herança
 - Polimorfismo
@@ -20,10 +22,12 @@ Vou refatorar o código, sempre que possível, procurando otimizar ao máximo se
 - Pilha
 -------------------
 ### O QUE FALTA DESENVOLVER:
+
 > Criar a validação de usuário e senha, antes de acessar a aplicação.
 
 > Formatar a exibição dos dados na impressão.
 
+> Fazer a validação das opções no input. 
 -------------------
 ### **DESCRIÇÃO DAS CLASSES:**
 
