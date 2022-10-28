@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entities;
 
 import interfaces.RegisterVehicles;
@@ -19,14 +16,6 @@ public class Cars extends Vehicles implements RegisterVehicles {
     int qtdDoors;
 
     public Cars() {
-    }
-
-    public Cars(String licencePlate, String brand, String model) {
-        super(licencePlate, brand, model);
-        this.licencePlate = licencePlate;
-        this.brand = brand;
-        this.model = model;
-
     }
 
     public Cars(String licencePlate, String brand, String model, String color, String motor, int qtdDoors,
@@ -106,21 +95,19 @@ public class Cars extends Vehicles implements RegisterVehicles {
 
             System.out.println("Registered vehicles: ");
             for (int i = 0; i < vehicles.getListVehicles().size(); i++) {
-                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate());
+                System.out.println(vehicles.getListVehicles().get(i).getLicencePlate() + " | ");
             }
     }
 
     public void printVehicles() {
         if (!vehicles.getListVehicles().isEmpty()) {
 
-            System.out.println("Vehicle data list: ");
             for (Vehicles lv : vehicles.getListVehicles()) {
                 System.out.println(lv);
             }
         } else {
             System.out.println("No registered vehicle.");
         }
-        System.out.println("------------------------------------------------------------------------------------------");
     }
 
 }

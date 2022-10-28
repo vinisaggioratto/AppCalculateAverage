@@ -1,12 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package appcalculateaverage;
 
 import entities.Cars;
 import entities.FuelSupply;
 import entities.Users;
+import entities.ValidOption;
 import entities.Vehicles;
 import java.text.ParseException;
 import java.util.Locale;
@@ -19,67 +17,62 @@ public class AppCalculateAverage {
         Scanner scan = new Scanner(System.in);
 //Variables
         String optionContinue = "Y"; //C = YES   N = NO
-        int optionMenu = 0;
+        String optionMenu = "";
 
 //Instantiated user object
+        ValidOption validOption = new ValidOption();
         Users user = new Users();
-
         Vehicles vehicle = new Vehicles();
         Cars cars = new Cars();
-
         FuelSupply fs = new FuelSupply(); //object that inserts the new object into the list
 
         //MENU
         System.out.println("APPLICATION OF AVERAGE CONTROL");
         do {
+            
+            //CRIAR VALIDAÇÃO DE USUÁRIO
+            
+            
             System.out.println("[1]Register | [2]Reports | [3]Search"); //cadastros , relatórios
-            optionMenu = scan.nextInt();
+            optionMenu = validOption.validatedOptionMenu(scan.nextLine()); //Faz a validação da opção do menu
 
             switch (optionMenu) {
-                case 1:
+                case "1":
                     System.out.println("[1]Register Vehicles | [2]Register Supply | [3]Register User");
-                    optionMenu = scan.nextInt();
-                    if (optionMenu == 1) {
+                    optionMenu = validOption.validatedOptionRegister(scan.nextLine());
+                    if (optionMenu.equals("1")) {
                         cars.registerVehicle();
                     }
-                    if (optionMenu == 2) {
+                    if (optionMenu.equals("2")) {
                         cars.printVehiclesMin();
                         fs.registerSupply();
                     }
-                    if (optionMenu == 3) {
+                    if (optionMenu.equals("3")) {
                         user.registerUser();
                     }
-                    scan.nextLine();
+                    //scan.nextLine();
                     break;
 
-                case 2:
+                case "2":
                     System.out.println("[1]Report Supply Data | [2]Report User Data | [3]Report Vehicle List | [4]Mileage List"); //mileage = kilometragem
-                    optionMenu = scan.nextInt();
-                    if (optionMenu == 1) {
+                    optionMenu = validOption.validatedOptionReport(scan.nextLine());
+                    if (optionMenu.equals("1")) {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                         //Print supply data
-                        System.out.println("Supply Data");
                         fs.printSupply();
-                        fs.printKm();
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                     }
-                    if (optionMenu == 2) {
+                    if (optionMenu.equals("2")) {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                         //print user data
-                        System.out.println("User Data");
                         user.printUser();
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
-
-                        System.out.println("User List Size: ");
-                        System.out.println(user.getListUsers().size());
-                        System.out.println("------------------------------------------------------------------------------------------");
-                        System.out.println("------------------------------------------------------------------------------------------");
                     }
-                    if (optionMenu == 3) {
+                    if (optionMenu.equals("3")) {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                         //print vehicles into list vehicles
@@ -88,7 +81,7 @@ public class AppCalculateAverage {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                     }
-                    if (optionMenu == 4) {
+                    if (optionMenu.equals("4")) {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                         //Print supply data
@@ -97,33 +90,34 @@ public class AppCalculateAverage {
                         System.out.println("------------------------------------------------------------------------------------------");
                         System.out.println("------------------------------------------------------------------------------------------");
                     }
-                    scan.nextLine();
+                    //scan.nextLine();
                     break;
 
-                case 3:
-                    scan.nextLine();
+                case "3":
+
                     System.out.println("[1]Search User | [2]Search Vehicle");
-                    optionMenu = scan.nextInt();
-                    if (optionMenu == 1) {
+                    optionMenu = validOption.validatedOptionSearch(scan.nextLine());
+                    if (optionMenu.equals("1")) {
                         user.searchUser();
                     }
-                    if (optionMenu == 2) {
+                    if (optionMenu.equals("2")) {
                         cars.searchVehicle();
                     }
-                    scan.nextLine();
+
+                    break;
+
+                default:
+                    System.out.println("Invalid Option.");
                     break;
             }
 
-            //scan.nextLine();
             //CONTINUE OR EXIT
             System.out.println("Back to Home Menu? Y/N");
             optionContinue = scan.nextLine();
             if (!optionContinue.equals("Y")) {
                 System.out.println("Application closed");
             }
-
         } while (optionContinue.equals("Y"));
 
     }
-
 }

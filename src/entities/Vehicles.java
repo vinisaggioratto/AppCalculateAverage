@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package entities;
 
 import java.util.ArrayList;
@@ -28,12 +25,6 @@ public class Vehicles extends Users {
 
     }
 
-    public Vehicles(String licencePlate, String brand, String model) {
-        this.licencePlate = licencePlate;
-        this.brand = brand;
-        this.model = model;
-    }
-
     public Vehicles(String licencePlate, String brand, String model, String color, String fuel, String type) {
         this.licencePlate = licencePlate;
         this.brand = brand;
@@ -41,22 +32,6 @@ public class Vehicles extends Users {
         this.color = color;
         this.fuel = fuel;
         this.type = type;
-
-    }
-
-    public Vehicles(String licencePlate, String brand, String model, int tankCapacity, String color,
-            float standardAverage, String fuel, float startingKm, String type) {
-
-        this.licencePlate = licencePlate;
-        this.brand = brand;
-        this.model = model;
-        this.tankCapacity = tankCapacity;
-        this.color = color;
-        this.standardAverage = standardAverage;
-        this.fuel = fuel;
-        this.startingKm = startingKm;
-        this.type = type;
-
     }
 
     //Getters and Setters
@@ -136,14 +111,12 @@ public class Vehicles extends Users {
         this.model = model;
     }
 
-
-
     @Override
     public String toString() {
         return "Licence Plate: " + getLicencePlate() + " - "
                 + "Brand: " + getBrand() + " - "
-                + "Model: " + getModel() + " - "               
-                + "Type: " + getType() + " - "  
+                + "Model: " + getModel() + " - "
+                + "Type: " + getType() + " - "
                 + "Color: " + getColor();
     }
 

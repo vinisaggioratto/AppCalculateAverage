@@ -3,15 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/entities/Cars.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/entities/FuelSupply.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/interfaces/CalculateAverage.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/interfaces/PrintUserData.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/interfaces/RegisterVehicles.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/entities/Vehicles.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/entities/Average.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/entities/Users.java</file>
-            <file>file:/E:/Projetos/AppCalculateAverage/src/appcalculateaverage/AppCalculateAverage.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/FuelSupply.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/Users.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/Average.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/Cars.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/interfaces/PrintUserData.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/interfaces/RegisterVehicles.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/Vehicles.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/entities/ValidOption.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/appcalculateaverage/AppCalculateAverage.java</file>
+            <file>file:/C:/Users/FROTA01-PC/Documents/SENAC/MÓDULO%202/UC06/Exemplos_Conteúdos/AppCalculateAverage/src/interfaces/CalculateAverage.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package entities;
 
 import java.text.ParseException;
@@ -17,32 +13,25 @@ public class FuelSupply {
     Scanner scan = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    
- Cars car = new Cars();
-    
-    FuelSupply addFs;
-    Average av = new Average();
-    List<FuelSupply> listFuelSupply = new ArrayList<FuelSupply>();
-    Stack<Double> stackKm = new Stack<Double>();
+    private List<FuelSupply> listFuelSupply = new ArrayList<FuelSupply>();
+    private Stack<Float> stackKm = new Stack<Float>();
+    private Cars car = new Cars();
+    private Average av = new Average();
+    private FuelSupply addFs;
 
-    String licencePlate;
-    double liters; //litros
-    Date supplyDate; //data abastecimento
-    double km;
-    double average;
+    private String licencePlate;
+    private float liters = 0.0f; //litros
+    private Date supplyDate; //data abastecimento
+    private Date data;
+    private float km = 0.0f;
+    private float average = 0.0f;
+    private float oldKm = 0.0f;
 
-    double oldKm = 0.0;
-
+    //CONSTRUCTOR
     public FuelSupply() {
     }
 
-    public FuelSupply(double km, double liters, Date supplyDate) {
-        this.km = km;
-        this.liters = liters;
-        this.supplyDate = supplyDate;
-    }
-
-    public FuelSupply(String licencePlate, double km, double liters, Date supplyDate, double average) {
+    public FuelSupply(String licencePlate, float km, float liters, Date supplyDate, float average) {
         this.licencePlate = licencePlate;
         this.km = km;
         this.liters = liters;
@@ -54,16 +43,12 @@ public class FuelSupply {
         return average;
     }
 
-    public void setAverage(double average) {
+    public void setAverage(float average) {
         this.average = average;
     }
 
-    public Stack<Double> getStackKm() {
+    public Stack<Float> getStackKm() {
         return stackKm;
-    }
-
-    public void setStackKm(Stack<Double> stackKm) {
-        this.stackKm = stackKm;
     }
 
     public List<FuelSupply> getListFuelSupply() {
@@ -82,7 +67,7 @@ public class FuelSupply {
         return km;
     }
 
-    public void setKm(double km) {
+    public void setKm(float km) {
         this.km = km;
     }
 
@@ -90,7 +75,7 @@ public class FuelSupply {
         return liters;
     }
 
-    public void setLiters(double liters) {
+    public void setLiters(float liters) {
         this.liters = liters;
     }
 
@@ -107,11 +92,11 @@ public class FuelSupply {
         System.out.println("Enter the Licence Plate: ");
         licencePlate = scan.nextLine();
         System.out.println("Enter the Date: ");
-        Date data = sdf.parse(scan.nextLine());
+        data = sdf.parse(scan.nextLine());
         System.out.println("Enter the km: ");
-        km = scan.nextDouble();
+        km = scan.nextFloat();
         System.out.println("Enter the liters: ");
-        liters = scan.nextDouble();
+        liters = scan.nextFloat();
 
         if (stackKm.isEmpty()) {
             oldKm = 1;
@@ -152,11 +137,11 @@ public class FuelSupply {
     @Override
     public String toString() {
         return "Fuel Supply Data: "
-                + getLicencePlate() + " - "
-                + getKm() + " - "
-                + getLiters() + " - "
-                + getAverage() + " - "
-                + sdf.format(getSupplyDate());
+                + "Licence Plate: " + getLicencePlate() + " - "
+                + "KM: " + getKm() + " - "
+                + "Liters: " + getLiters() + " - "
+                + "Average: " + String.format("%.2f", getAverage()) + " - "
+                + "Date: " + sdf.format(getSupplyDate());
     }
 
 }
