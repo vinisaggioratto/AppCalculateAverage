@@ -15,13 +15,12 @@ public class AppCalculateAverage {
         Locale.setDefault(Locale.US);
         Scanner scan = new Scanner(System.in);
 
-        String optionContinue = "Y"; //C = YES   N = NO
-        String optionMenu = "";
+        String optionContinue = "Y", optionMenu = "";
 
         ValidOption validOption = new ValidOption();
         Users user = new Users();
-        user = new Users("admin", "123456"); //login test user
-        user.getListUsers().add(user);//add login test user
+         user = new Users("admin", "123456"); //login test user
+         user.getListUsers().add(user);//add login test user
         Vehicles vehicle = new Vehicles();
         Cars cars = new Cars();
         FuelSupply fs = new FuelSupply();
@@ -41,12 +40,13 @@ public class AppCalculateAverage {
                 System.out.println("\n");
 
                 System.out.println("**MAIN MENU**");
-                System.out.println("[1]Register | [2]Reports | [3]Search"); //cadastros , relatórios
+                System.out.println("[1]Register | [2]Reports | [3]Search");
                 optionMenu = validOption.validatedOptionMenu(scan.nextLine());
 
                 switch (optionMenu) {
                     case "1":
-                        System.out.println("[1]Register Vehicles | [2]Register Supply | [3]Register User");
+                        System.out.println("[1]Register Vehicles | "
+                                + "[2]Register Supply | [3]Register User");
                         optionMenu = validOption.validatedOptionRegister(scan.nextLine());
                         if (optionMenu.equals("1")) {
                             cars.registerVehicle();
@@ -61,7 +61,9 @@ public class AppCalculateAverage {
                         break;
 
                     case "2":
-                        System.out.println("[1]Report Supply Data | [2]Report User Data | [3]Report Vehicle List | [4]Mileage List"); //mileage = kilometragem
+                        System.out.println("[1]Report Supply Data | "
+                                + "[2]Report User Data | [3]Report Vehicle List "
+                                + "| [4]Mileage List");
                         optionMenu = validOption.validatedOptionReport(scan.nextLine());
                         if (optionMenu.equals("1")) {
                             System.out.println("------------------------------------------------------------------------------------------");
