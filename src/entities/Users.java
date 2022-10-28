@@ -27,15 +27,15 @@ public class Users {
     }
 
     //GET / SETTER
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public String getPassword() {
+    private String getPassword() {
         return password;
     }
 
@@ -88,7 +88,6 @@ public class Users {
         
         if (!returnS == true) {
             System.out.println("User not found.");  
-
         }
         return returnS;
     }
