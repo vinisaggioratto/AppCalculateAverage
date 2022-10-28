@@ -20,8 +20,8 @@ public class FuelSupply {
     private FuelSupply addFs;
 
     private String licencePlate;
-    private float liters = 0.0f; //litros
-    private Date supplyDate; //data abastecimento
+    private float liters = 0.0f;
+    private Date supplyDate;
     private Date data;
     private float km = 0.0f;
     private float average = 0.0f;

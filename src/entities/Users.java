@@ -1,4 +1,3 @@
-
 package entities;
 
 import java.util.ArrayList;
@@ -8,10 +7,8 @@ import java.util.Scanner;
 public class Users {
 
     Scanner scan = new Scanner(System.in);
-
     Users user;
-    Users createListUser;
-
+    
     List<Users> listUsers = new ArrayList<Users>();
     private String name;
     private String password;
@@ -71,8 +68,8 @@ public class Users {
             System.out.println("User not found.");
         }
     }
-    
-    public boolean validateUser(){
+
+    public boolean validateUser() {
         System.out.println("Enter the user name: ");
         String nameU = scan.nextLine();
         System.out.println("Enter the password: ");
@@ -82,16 +79,15 @@ public class Users {
         for (int i = 0; i < this.listUsers.size(); i++) {
             if (this.listUsers.get(i).getName().equalsIgnoreCase(nameU) && this.listUsers.get(i).getPassword().equalsIgnoreCase(pass)) {
                 returnS = true;
-                System.out.println("User found. Access application.");                
+                System.out.println("User found. Access application.");
             }
         }
-        
+
         if (!returnS == true) {
-            System.out.println("User not found.");  
+            System.out.println("User not found.");
         }
         return returnS;
     }
-    
 
     public void printUser() {
         if (!getListUsers().isEmpty()) {
