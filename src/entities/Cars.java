@@ -12,8 +12,8 @@ public class Cars extends Vehicles implements RegisterVehicles {
     Vehicles vehicles = new Vehicles();
     Users users;
 
-    String motor;
-    int qtdDoors;
+    private String motor;
+    private int qtdDoors;
 
     public Cars() {
     }

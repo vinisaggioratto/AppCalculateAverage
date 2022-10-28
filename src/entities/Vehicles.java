@@ -10,15 +10,15 @@ public class Vehicles extends Users {
     List<Vehicles> listVehicles = new ArrayList<Vehicles>();
 
     //Variables
-    String licencePlate; //placa de carro
-    String brand; //marca
-    String model; //modelo
-    int tankCapacity; //capacidade do tanque
-    String color;
-    float standardAverage = 0.00f; //média padrão
-    String fuel; //combustivel
-    float startingKm = 0.00f; //km de cadastro
-    String type; //tipo sedan, hatch
+    protected String licencePlate; //placa de carro
+    protected String brand; //marca
+    protected String model; //modelo
+    protected int tankCapacity; //capacidade do tanque
+    protected String color;
+    protected float standardAverage = 0.00f; //média padrão
+    protected String fuel; //combustivel
+    protected float startingKm = 0.00f; //km de cadastro
+    protected String type; //tipo sedan, hatch
 
     //Constructors
     public Vehicles() {

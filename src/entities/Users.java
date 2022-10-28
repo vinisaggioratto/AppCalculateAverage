@@ -13,11 +13,12 @@ public class Users {
     Users createListUser;
 
     List<Users> listUsers = new ArrayList<Users>();
-    String name;
-    String password;
+    private String name;
+    private String password;
 
     //CONSTRUCTOR
     public Users() {
+
     }
 
     public Users(String name, String password) {
@@ -70,6 +71,28 @@ public class Users {
             System.out.println("User not found.");
         }
     }
+    
+    public boolean validateUser(){
+        System.out.println("Enter the user name: ");
+        String nameU = scan.nextLine();
+        System.out.println("Enter the password: ");
+        String pass = scan.nextLine();
+        boolean returnS = false;
+
+        for (int i = 0; i < this.listUsers.size(); i++) {
+            if (this.listUsers.get(i).getName().equalsIgnoreCase(nameU) && this.listUsers.get(i).getPassword().equalsIgnoreCase(pass)) {
+                returnS = true;
+                System.out.println("User found. Access application.");                
+            }
+        }
+        
+        if (!returnS == true) {
+            System.out.println("User not found.");  
+
+        }
+        return returnS;
+    }
+    
 
     public void printUser() {
         if (!getListUsers().isEmpty()) {
